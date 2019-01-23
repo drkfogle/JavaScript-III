@@ -17,6 +17,7 @@
 function GameObject (attrs){
   this.dimensions = attrs.dimensions;
   this.createdAt = attrs.createdAt;
+  this.name = attrs.name;
   }
   GameObject.prototype.destroy = function (){
     return `${this.name} was removed from the game.`
@@ -49,7 +50,7 @@ function CharacterStats (attrs){
   * should inherit takeDamage() from CharacterStats
 */
  function Humanoid(attrs){
-  CharacterStats(this,attrs);
+  CharacterStats.call(this,attrs);
   this.team = attrs.team;
   this.weapons = attrs.weapons;
   this.language = attrs.language;
